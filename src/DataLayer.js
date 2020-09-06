@@ -4,7 +4,6 @@ export const DataLayerContext = createContext();
 
 const DataLayer = ({ initialState, reducer, children }) => (
   <DataLayerContext.Provider value={useReducer(reducer, initialState)}>
-    {console.log("reducer-check", reducer, "InitialState-check", initialState)}
     {children}
   </DataLayerContext.Provider>
 );
