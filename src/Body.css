@@ -7,6 +7,7 @@
     padding: 30px;
     background: linear-gradient(#574b90, rgba(0, 0, 0, 1));
     height: auto;
+    overflow-y: overlay;
 }
 
 .body__info {
@@ -28,7 +29,7 @@
 
 
 .body__infoText>strong {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     text-transform: uppercase;
 }
 
@@ -43,4 +44,26 @@
 .body__infoText>p {
     font-size: 1vw;
     margin: 0;
+}
+
+.body__songs {
+    margin-top: 20px
+}
+
+.body__Icon {
+    display: flex;
+    align-items: center;
+}
+
+.body__Icon>.MuiSvgIcon-root {
+    margin: 0px 10px;
+}
+
+.body__shuffle {
+    font-size: 5vw !important;
+}
+
+.body__shuffle:hover {
+    transform: scale(1.08);
+    transition: 100ms transform ease-in;
 }

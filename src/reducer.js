@@ -27,7 +27,7 @@ const reducer = (state, action) => {
     case "SET_SELECTED_PLAYLIST":
       return {
         ...state,
-        select_playlist: action.response,
+        select_playlist: action.select_playlist,
       };
     default:
       return state;
