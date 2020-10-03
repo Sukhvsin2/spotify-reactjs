@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sidebar.css";
 import SidebarOptions from "./SidebarOptions";
 import HomeIcon from "@material-ui/icons/Home";
@@ -7,8 +7,8 @@ import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import { useDataLayerValue } from "./DataLayer";
 
 function Sidebar() {
-  const [{ playlists }, displatch] = useDataLayerValue();
-  console.log("check playlist", playlists);
+  const [{ playlists }] = useDataLayerValue();
+  const [plist, setPlist] = useState("");
   return (
     <div className="sidebar">
       <img
@@ -23,7 +23,11 @@ function Sidebar() {
       <strong className="sidebar__title">Playlists</strong>
       <hr />
       {playlists?.items?.map((playlists) => (
-        <SidebarOptions title={playlists.name} key={playlists.id} />
+        <SidebarOptions
+          onClick={setPlist(playlists.id)}
+          title={playlists.name}
+          key={playlists.id}
+        />
       ))}
     </div>
   );
